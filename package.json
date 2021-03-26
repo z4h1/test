@@ -1,0 +1,24 @@
+{
+  "name": "skillsTest",
+  "description": "skillsTest",
+  "version": "1.0.0",
+  "author": "",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "runtime": {
+    "framework": "nodejs",
+    "ignoreFlags": true
+  },
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "body-parser": "*",
+    "express-session": "*",
+    "http": "*",
+    "moment": "*",
+    "pg": "*",
+    "mongodb": "*"
+  }
+}

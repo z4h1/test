@@ -1,0 +1,20 @@
+<%- include('headerFooter', {type: 'header'}) %>
+    <div id="toDoListWrap">
+        <h2>TO DO</h2>
+        <ul id="toDoList"> <%
+            if(items.length == 0) { %><li class="empty">no items</li> <% }
+            else {
+                items.sort(function(a, b){ return(a.done === b.done)? 0 : a.done ? 1 : -1; });
+                for(let i in items){ %>
+                    <li onclick="toDoList.check(event)" data-id="<%= items[i]['id']; %>" data-done="<%= items[i]['done']; %>">
+                        <span><%= decodeURIComponent(items[i]['text']); %></span>
+                        <button onclick="toDoList.remove(this)">✕</button>
+                    </li>
+                <% }
+            }
+        %></ul>
+        <div id="toDoListActions">
+            <button title="Add" data-action="add">+</button>
+        </div>
+    </div>
+<%- include('headerFooter', {type: 'footer'}) %>
